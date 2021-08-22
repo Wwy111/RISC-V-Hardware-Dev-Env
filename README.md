@@ -9,9 +9,12 @@
 
 
 ```
-git clone --recursive https://github.com/whysodangerous/RISC-V-Hardware-Dev-Env.git
+git clone https://github.com/whysodangerous/riscv64_wwy.git
+git clone https://github.com/whysodangerous/am-kernels.git
+git clone https://github.com/whysodangerous/abstract-machine.git
+git clone https://github.com/whysodangerous/oscpu.git
+git clone https://github.com/whysodangerous/nemu.git
 ```
-
 
 
 ## Part1. 准备硬件开发所需的软件测试集及测试集运行时环境
