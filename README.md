@@ -12,7 +12,6 @@
 git clone https://github.com/whysodangerous/riscv64_wwy.git
 git clone https://github.com/whysodangerous/am-kernels.git
 git clone https://github.com/whysodangerous/abstract-machine.git
-git clone https://github.com/whysodangerous/oscpu.git
 git clone https://github.com/whysodangerous/nemu.git
 ```
 
@@ -167,29 +166,7 @@ git clone https://github.com/whysodangerous/nemu.git
 
 
 
-## Part4. 测试
-
-- 从我个人[github仓库](https://github.com/whysodangerous)上下载`oscpu/`这个目录（这个工程是用`verilog`写的`riscv64`经典五级流水线）
-
-  ```
-  cd oscpu/cpu
-  bash runall.sh
-  ```
-
-  `runall.sh`脚本会根据编译`am-kernels/tests/cputests/tests`目录下的所有文件，然后执行verilator仿真程序，依次使用每一个`.c`源程序对`verilog`代码进行`difftest`验证，终端上每一项后面都输出了PASS表明`verilog`代码正确，前面的环境安装正确。
-
-- 如果想查看某一项测试的cpu波形文件
-
-  ```
-  make run TEST=add
-  gtkwave top.vcd
-  ```
-
-  `add`可以换成`am-kernels/tests/cputests/`中的任意一项
-
-  
-
-## Part5. 硬件开发环境
+## Part4. 硬件开发环境
 
 - 硬件开发最熟知的工具就是`verilog+vivado`组合，这里介绍一个用高级语言描述电路的工具：`chisel`
 
@@ -239,9 +216,9 @@ git clone https://github.com/whysodangerous/nemu.git
 
   
 
-## Part6. 测试
+## Part5. 测试
 
-下面需要对上面安装的两个工具进行测试，测试之前，还需要根据个人情况安装一下代码编辑器，编辑器在`linux`上的安装就不赘述了，网上非常多。可以直接在`Ubuntu20`的`snap应用商店`里安装。
+下面需要对上面安装的工具进行测试，测试之前，还需要根据个人情况安装一下代码编辑器，编辑器在`linux`上的安装就不赘述了，网上非常多。可以直接在`Ubuntu20`的`snap应用商店`里安装。
 
 - `vscode`，编写`verilog`，`c`，`c++`，`Makefile`文件等
 
