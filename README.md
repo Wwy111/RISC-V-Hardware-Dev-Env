@@ -15,7 +15,6 @@ git clone https://github.com/whysodangerous/abstract-machine.git
 git clone https://github.com/whysodangerous/nemu.git
 ```
 
-
 ## Part1. 准备硬件开发所需的软件测试集及测试集运行时环境
 
 - 把apt源更换成国内源
@@ -216,9 +215,9 @@ git clone https://github.com/whysodangerous/nemu.git
 
   
 
-## Part5. 测试
+## Part6. 测试
 
-下面需要对上面安装的工具进行测试，测试之前，还需要根据个人情况安装一下代码编辑器，编辑器在`linux`上的安装就不赘述了，网上非常多。可以直接在`Ubuntu20`的`snap应用商店`里安装。
+下面需要对上面安装的两个工具进行测试，测试之前，还需要根据个人情况安装一下代码编辑器，编辑器在`linux`上的安装就不赘述了，网上非常多。可以直接在`Ubuntu20`的`snap应用商店`里安装。
 
 - `vscode`，编写`verilog`，`c`，`c++`，`Makefile`文件等
 
@@ -238,7 +237,7 @@ git clone https://github.com/whysodangerous/nemu.git
 
   `scala`
 
-- 从我个人[github仓库](https://github.com/whysodangerous)上下载`riscv64-wwy/`这个目录（这个工程是用`chisel`写的`riscv64`经典五级流水线，同时加上了cache）
+- 从我个人[github仓库](https://github.com/whysodangerous)上下载`riscv64-wwy/`这个目录（这个工程是用`chisel`写的`riscv64`经典五级流水线，同时加上了cache，8.29 更新：新增一个shortpipe分支，这个分支chisel代码更加规范，是一个四级流水线cpu，把访存单元放到EXE级）
 
   ```
   cd riscv64-wwy
@@ -291,14 +290,16 @@ git clone https://github.com/whysodangerous/nemu.git
   make emu-run RUN=MICROBENCH DIFF=1
   ```
 
-  强烈建议这里不要设置`VCD`参数，要不然的话波形文件会非常大，会把内存和硬盘跑崩。
+  强烈建议这里不要设置`VCD`参数，要不然的话波形文件会非常大，会把内存和硬盘跑崩，如果非要加的话，添加`START`和`END` 参数，命令如下
+
+  ```
+  make emu-run RUN=DHRYSTONE DIFF=1 VCD=1 START=5000 END=10000
+  ```
 
   
-
   
-
   至此，环境配置完毕                                                                  
   
   ​                                                                                                                                              ——wwy
   
-  ​                                                                                                                                              2021.8.22
+  ​                                                                                                                                              2021.8.29
